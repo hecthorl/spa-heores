@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 // import fetchingHeros from '../helpers/fetchingHeros';
 // import getHeroByName from '../selector/getHeroByName';
-import HeroCard from './heroes/HeroCard';
+import HeroCardSearch from './heroes/HeroCardSearch';
 
 const SearchScreen = ({ history, location }) => {
    const [input, setInput] = useState('');
@@ -14,26 +14,15 @@ const SearchScreen = ({ history, location }) => {
    };
 
    const that = middle();
-   // console.log(that);
-   // const heroesFiltered = getHeroByName(middle());
 
    useEffect(() => {
       const url = `https://superheroapi.com/api.php/4413143712033348/search/${that}`;
       fetch(url)
          .then(res => res.json())
          .then(data => {
-            console.log(data.results);
             setSrch(data.results);
          });
    }, [that]);
-
-   // console.log();
-   // const rr = async () => {
-   //    const url = `https://superheroapi.com/api.php/4413143712033348/search/${that}`;
-   //    const results = await fetch(url);
-   //    return
-   // };
-   // rr();
 
    const handleSubmit = event => {
       event.preventDefault();
@@ -70,7 +59,7 @@ const SearchScreen = ({ history, location }) => {
                <h4>Resultados</h4>
                <hr />
                {srch?.map(item => (
-                  <HeroCard key={item.id} {...item} />
+                  <HeroCardSearch key={item.id} {...item} />
                ))}
             </div>
          </div>

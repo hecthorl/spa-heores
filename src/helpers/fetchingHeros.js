@@ -1,9 +1,11 @@
 const fetchingHeros = async keyword => {
-   const url = `https://superheroapi.com/api.php/4413143712033348/search/${keyword}`;
+   const url = `https://akabab.github.io/superhero-api/api/all.json`;
 
    const res = await fetch(url);
-   const { results } = await res.json();
-   return results;
+
+   const data = await res.json();
+
+   return data;
 };
 
 export default fetchingHeros;

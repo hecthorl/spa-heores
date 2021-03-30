@@ -1,3 +1,5 @@
+// import { useEffect } from 'react';
+// import fetchingHeros from '../helpers/fetchingHeros';
 import HeroList from './heroes/HeroList';
 
 const DcScreen = () => {
