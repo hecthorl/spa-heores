@@ -1,6 +1,6 @@
 const LoginScreen = ({ history }) => {
    return (
-      <div className="container mt-5">
+      <div className="container mt-5 animate__animated animate__fadeInRight">
          <h1>login</h1>
          <hr />
          <button
